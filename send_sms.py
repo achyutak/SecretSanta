@@ -24,6 +24,6 @@ class SMS:
                         .create(
                              body=body,
             to=wish_list.phone_number,
-            from_="+12287077918",
+            from_="",
                          )
         print(message.sid)
