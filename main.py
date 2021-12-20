@@ -62,7 +62,7 @@ if __name__ == '__main__':
         elif pd.isna(url):
             url = 'anywhere'
         phone_number = df[df.names == santa_name].phone_number.values[-1]
-        additional_details = record.additional_details.values[-1] if pd.isna(record.additional_details.values[-1]) else "None"
+        additional_details = record.additional_details.values[-1] if not pd.isna(record.additional_details.values[-1]) else "None"
         address = record.address.values[-1]
         wishlist = Wishlist(name=assignee, item=selected_item, phone_number=phone_number, url=url, additional_details=additional_details, address = address)
         SMS().send(wish_list=wishlist)
