@@ -1,7 +1,3 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import numpy as np
 import pandas as pd
 from send_sms import SMS
@@ -39,8 +35,6 @@ class Wishlist:
         self.additional_details = additional_details
         self.address = address
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     df = pd.read_excel('Wishlist.xlsx')
     if len(df) % 2 != 0:
@@ -70,5 +64,3 @@ if __name__ == '__main__':
 
     # Find these values at https://twilio.com/user/account
     # To set up environmental variables, see http://twil.io/secure
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
