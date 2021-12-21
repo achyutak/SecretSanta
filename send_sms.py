@@ -6,8 +6,8 @@ from twilio.rest import Client
 
 class SMS:
     def __init__(self):
-        self.account_sid = 'AC4ca5e400031bcb5231a53dd8415aa3d3'
-        self.auth_token = '7e3ce1b0320608319816fe2f12022327'
+        self.account_sid = 'TWILIO_ACCOUNT_SID'
+        self.auth_token = 'TWILIO_AUTH_TOKEN'
 
     def send(self,wish_list):
         """:parameter: wish_list an object with name,url,selected_item,phone_number variables
