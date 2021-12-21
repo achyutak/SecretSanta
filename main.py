@@ -1,3 +1,7 @@
+# This is a sample Python script.
+
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import numpy as np
 import pandas as pd
 from send_sms import SMS
@@ -27,14 +31,15 @@ class SecretSanta:
             return selected
 
 class Wishlist:
-    def __init__(self, name, phone_number, item, url, additional_details, address):
+    def __init__(self, name, phone_number, item, url, address):
         self.name = name
         self.url = url
         self.phone_number = "+1" + str(phone_number)
         self.selected_item = item
-        self.additional_details = additional_details
         self.address = address
 
+
+# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     df = pd.read_excel('Wishlist.xlsx')
     if len(df) % 2 != 0:
@@ -56,11 +61,12 @@ if __name__ == '__main__':
         elif pd.isna(url):
             url = 'anywhere'
         phone_number = df[df.names == santa_name].phone_number.values[-1]
-        additional_details = record.additional_details.values[-1] if not pd.isna(record.additional_details.values[-1]) else "None"
         address = record.address.values[-1]
-        wishlist = Wishlist(name=assignee, item=selected_item, phone_number=phone_number, url=url, additional_details=additional_details, address = address)
+        wishlist = Wishlist(name=assignee, item=selected_item, phone_number=phone_number, url=url, address = address)
         SMS().send(wish_list=wishlist)
 
 
     # Find these values at https://twilio.com/user/account
     # To set up environmental variables, see http://twil.io/secure
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
